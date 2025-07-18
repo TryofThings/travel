@@ -5,10 +5,10 @@ import { TravelPreferences, TravelPlan, NaturalLanguageQuery, GeminiResponse, Ac
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY || 'demo-key');
 
 export class GeminiTravelAgent {
-  // CORRECTED: Use 'gemini-pro' for the standard Gemini Pro model
-  private model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-  // You can also consider 'gemini-1.5-flash' if you want a faster, more cost-effective model
-  // private model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  // *** THIS LINE HAS BEEN UPDATED ***
+  // Using 'gemini-1.5-flash' as it's generally available and a good balance of speed/cost.
+  private model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
+  // If you prefer, you can also try 'gemini-2.0-flash' for the latest flash model.
 
   private safetySettings = [ // Added basic safety settings
     {
