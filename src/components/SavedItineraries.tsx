@@ -1,6 +1,6 @@
 import React from 'react';
 import { TravelPlan } from '../types/travel'; // Adjust path if types/travel.ts is elsewhere
-import { Button } from './ui/button'; // Assuming you have a UI Button component
+// import { Button } from './ui/button'; // REMOVED: This import is no longer needed
 
 interface SavedItinerariesProps {
   savedItineraries: TravelPlan[];
@@ -26,9 +26,13 @@ const SavedItineraries: React.FC<SavedItinerariesProps> = ({
     <div className="container mx-auto p-6 max-w-4xl min-h-[calc(100vh-80px)]">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-3xl font-extrabold text-gray-800">Your Saved Itineraries</h2>
-        <Button onClick={onBackToHome} className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md">
+        {/* Replaced <Button> with native <button> */}
+        <button
+          onClick={onBackToHome}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg shadow-md"
+        >
           Back to Home
-        </Button>
+        </button>
       </div>
 
       {savedItineraries.length === 0 ? (
@@ -50,18 +54,20 @@ const SavedItineraries: React.FC<SavedItinerariesProps> = ({
                 </p>
               </div>
               <div className="flex space-x-3">
-                <Button
+                {/* Replaced <Button> with native <button> */}
+                <button
                   onClick={() => handleView(itinerary)}
                   className="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg"
                 >
                   View
-                </Button>
-                <Button
+                </button>
+                {/* Replaced <Button> with native <button> */}
+                <button
                   onClick={() => onDeleteItinerary(itinerary.id!)} // Assuming ID will always be present for saved items
                   className="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-lg"
                 >
                   Delete
-                </Button>
+                </button>
               </div>
             </div>
           ))}
