@@ -265,7 +265,7 @@ const ItineraryResults: React.FC<ItineraryResultsProps> = ({
                 )}
                 
                 <div className="space-y-4">
-                  {day.activities?.map((activity) => ( {/* Ensure activities is an array */}
+                  {day.activities?.map((activity) => ( 
                     <div key={activity.id} className="border border-slate-200 rounded-xl p-4 hover:shadow-md transition-all duration-200">
                       <div className="flex items-start justify-between mb-3">
                         <div className="flex-1">
